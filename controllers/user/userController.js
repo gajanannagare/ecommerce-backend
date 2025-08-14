@@ -9,7 +9,6 @@ export const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
   try {
     const existingUser = await UserModel.findOne({ email: email });
-    console.log(existingUser);
     if (existingUser) {
       res
         .status(409)

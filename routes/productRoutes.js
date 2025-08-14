@@ -10,7 +10,6 @@ const router = express();
 
 const authenticate = (req, res, next) => {
   try {
-    console.log(req.headers);
     const authHeaders = req.headers["authorization"];
     const accessToken = authHeaders && authHeaders.split(" ")[1];
 
