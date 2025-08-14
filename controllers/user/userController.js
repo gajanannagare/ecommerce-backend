@@ -12,7 +12,7 @@ export const registerUser = async (req, res) => {
     if (existingUser) {
       res
         .status(409)
-        .status({ success: true, message: "User is alredy present" });
+        .json({ success: false, message: "User is alredy present!" });
     } else {
       const hashedPass = await bcrypt.hash(password, 10);
       const user = await UserModel.create({
