@@ -32,6 +32,16 @@ const authenticate = (req, res, next) => {
   }
 };
 
+/**
+ * @swagger
+ * /api/product/getProducts:
+ *   get:
+ *     summary: Get all users
+ *     responses:
+ *       200:
+ *         description: List of users
+ */
+
 router.get("/getProducts", authenticate, getProducts);
 router.get("/getProduct/:id", authenticate, getProductById);
 router.post("/createProduct", authenticate, createProduct);
